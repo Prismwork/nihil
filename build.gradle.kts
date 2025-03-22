@@ -15,13 +15,11 @@ javafx {
     modules("javafx.base", "javafx.graphics", "javafx.controls")
 }
 
-val hmclVersion = "3.6.11.272"
-
 group = "io.github.prismwork"
-version = "0.1.0+hmcl.$hmclVersion"
+version = "0.1.0+hmcl.${property("hmcl_version")}"
 
 base {
-    archivesName.set("nihil")
+    archivesName.set("${property("modid")}")
 }
 
 repositories {
@@ -45,8 +43,9 @@ repositories {
 }
 
 dependencies {
-    implementation("com.unascribed:nilloader:1.3.4")
-    implementation("HMCL-dev:HMCL:$hmclVersion")
+    implementation("com.unascribed:nilloader:${property("nilloader_version")}")
+    implementation("HMCL-dev:HMCL:${property("hmcl_version")}")
+    implementation("org.jetbrains:annotations:24.0.0")
 }
 
 tasks.processResources {

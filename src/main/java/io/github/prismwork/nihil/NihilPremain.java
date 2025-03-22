@@ -10,8 +10,9 @@ public class NihilPremain implements Runnable {
 	
 	@Override
 	public void run() {
-		LOGGER.info("Initialized.");
 		ClassTransformer.register(new MainPageTrans());
 		ClassTransformer.register(new LauncherSettingsPageTrans());
+
+		LOGGER.info("Initialized.");
 	}
 }

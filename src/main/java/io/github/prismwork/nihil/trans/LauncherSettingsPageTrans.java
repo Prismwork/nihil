@@ -72,7 +72,8 @@ public class LauncherSettingsPageTrans extends MiniTransformer {
         public static AdvancedListBox onInitSidebar(AdvancedListBox sidebar, TabHeader tab) {
             NihilPremain.LOGGER.info("Patching the launcher settings sidebar");
 
-            sidebar.addNavigationDrawerTab(tab, ModListPage.TAB, "Nilmods", SVG.MENU);
+            sidebar.startCategory("NilLoader")
+                    .addNavigationDrawerTab(tab, ModListPage.TAB, "Mods", SVG.MENU);
             return sidebar;
         }
     }
